@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SIAP 2K20 - Login</title>
+  <title>MEMO RSM Gresik - Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,14 +22,14 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="/Login"><b>SIAP</b> 2K20</a>
+    <a href="/Login"><b>MEMO</b> RSM GRESIK</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Silahkan Login Terlebih Dahulu</p>
 
-      <form action="  " method="post">
+      <form action="{{ route('postlogin') }}" method="post">
         {{ csrf_field() }}
         <div class="input-group mb-3">
           <input type="email" class="form-control" name="email" placeholder="Email">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,12 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', [AuthController::class, 'Login'])->name('login');
-Route::get('Login', [AuthController::class, 'Login'])->name('login');
+Route::get('/', [AuthController::class, 'showLogin'])->name('login');
+Route::get('Login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('postLogin', [AuthController::class, 'postLogin'])->name('postlogin');
+
+Route::group(['middleware' => 'auth'], function(){
+
+    Route::get('Home', [HomeController::class, 'Home'])->name('home');
+
+});
