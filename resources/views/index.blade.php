@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
-@section('app-name', 'SIAP ~ 2K20')
-@section('current-user', 'Jack Anderson')
+@section('app-name', 'MEMO ~ 2K21')
 @section('page', 'Dashboard')
 @section('main-page', 'Dashboard')
 @section('sub-page', 'Home')
@@ -17,7 +16,7 @@
                     <div class="info-box-content">
                         <span class="info-box-text">Jumlah User</span>
                         <span class="info-box-number">
-                            {{ $pegawai->count() }}
+                            -
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -32,7 +31,7 @@
                     <div class="info-box-content">
                         <span class="info-box-text">Jumlah Berkas</span>
                         <span class="info-box-number">
-                            {{ $berkas->count() }}
+                            -
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -51,7 +50,7 @@
                     <div class="info-box-content">
                         <span class="info-box-text">Berkas Pending</span>
                         <span class="info-box-number">
-                            {{ $berkasbelum->count() }}
+                            -
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -67,7 +66,7 @@
                     <div class="info-box-content">
                         <span class="info-box-text">Berkas Verified</span>
                         <span class="info-box-number">
-                            {{ $berkasverif->count() }}
+                            -
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -129,54 +128,6 @@
             <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-
-        <!-- Info Data Belum terverifikasi -->
-        @if (auth()->user()->level == 'Admin')
-            <div class="card">
-                <div class="card-header border-0">
-                    <h3 class="card-title">Berkas Belum Terverifikasi</h3>
-                </div>
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-striped table-valign-middle">
-                        <thead>
-                            <tr>
-                                <th>Nama Berkas</th>
-                                <th>Jenis</th>
-                                <th>User</th>
-                                <th>Tgl upload</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            @foreach ($berkasbelum as $bb)
-                                <tr>
-                                    <td>{{ $bb->nm_berkas }}</td>
-                                    <td>{{ $bb->nm_jns_berkas }}</td>
-                                    <td>{{ $bb->nm_pegawai }}</td>
-                                    <td>{{ $bb->tgl_upload }}</td>
-                                    <td>
-                                        <a target="_blank" href="{{ url('Uploads/Berkas/' . $bb->nm_berkas) }}"
-                                            class="text-muted">
-                                            <i style="color: blue" class="fas fa-search"></i>
-                                        </a>&nbsp;
-                                        <button style="border:none; padding:0" class="text-muted" data-toggle="modal"
-                                            data-target="#modal-verif">
-                                            <i style="color: green" class="fas fa-check-square"></i>
-                                        </button>&nbsp;
-                                        <button style="border:none; padding:0" class="text-muted" data-toggle="modal"
-                                            data-target="#modal-reject">
-                                            <i style="color: red" class="fas fa-exclamation-triangle"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            @endforeach
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        @endif
 
     </div><!-- /.container-fluid -->
 @endsection

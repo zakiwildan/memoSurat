@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="{{asset('AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="{{asset('AdminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('AdminLTE/dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
@@ -29,7 +31,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Silahkan Login Terlebih Dahulu</p>
 
-      <form action="{{ route('postlogin') }}" method="post">
+      <form action="{{ route('postlogin') }}" method="post" name="formLogin" onsubmit="return validateForm()">
         {{ csrf_field() }}
         <div class="input-group mb-3">
           <input type="email" class="form-control" name="email" placeholder="Email">
@@ -68,6 +70,37 @@
 <script src="{{asset('AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('AdminLTE/dist/js/adminlte.min.js')}}"></script>
+<!-- SweetAlert2 -->
+<script src="{{asset('AdminLTE/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+
+<script>
+  function validateForm() {
+      if (document.forms["formLogin"]["email"].value == "") {
+          document.forms["formLogin"]["email"].focus();
+          Swal.fire({
+            toast: true,
+            position: 'top-end',
+            text: 'Kolom Email Masih Kosong!!!',
+            icon: 'warning',
+            showConfirmButton: false,
+            timer: 3000
+          })
+          return false;
+          }
+      if (document.forms["formLogin"]["password"].value == "") {
+          document.forms["formLogin"]["password"].focus();
+          Swal.fire({
+            toast: true,
+            position: 'top-end',
+            text: 'Kolom Password Masih Kosong!!!',
+            icon: 'warning',
+            showConfirmButton: false,
+            timer: 3000
+          })
+          return false;
+          }
+      }
+</script>
 
 </body>
 </html>

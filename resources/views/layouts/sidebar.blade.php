@@ -42,7 +42,7 @@
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
-                                Kepegawaian
+                                Memo
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -51,17 +51,17 @@
                             @if (auth()->user()->level == 'Admin')
                                 <li class="nav-item">
                                     <a href="/DataPegawai" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Data Pegawai</p>
+                                        <i class="fas fa-paper-plane nav-icon"></i>
+                                        <p>Buat Memo</p>
                                     </a>
                                 </li>
                             @endif
 
-                            @if (auth()->user()->level == 'Karyawan')
+                            @if (auth()->user()->level == 'Admin')
                                 <li class="nav-item">
                                     <a href="/DaftarBerkas/{{ auth()->user()->nip }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Daftar Berkas</p>
+                                        <i class="fas fa-inbox nav-icon"></i>
+                                        <p>Disposisi Masuk</p>
                                     </a>
                                 </li>
                             @endif
@@ -69,8 +69,8 @@
                             @if (auth()->user()->level == 'Admin')
                                 <li class="nav-item">
                                     <a href="/ExportData" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Export Data Pegawai</p>
+                                        <i class="fas fa-envelope-open nav-icon"></i>
+                                        <p>Memo Keluar</p>
                                     </a>
                                 </li>
                             @endif
@@ -99,8 +99,16 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
+                                <a href="/TambahUser" class="nav-link">
+                                    <i class="fas fa-user-plus nav-icon"></i>
+                                    <p>Tambah User</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
                                 <a href="/DaftarUser" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fas fa-users nav-icon"></i>
                                     <p>Daftar User</p>
                                 </a>
                             </li>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -21,6 +22,13 @@ Route::post('postLogin', [AuthController::class, 'postLogin'])->name('postlogin'
 
 Route::group(['middleware' => 'auth'], function(){
 
+    //Home
     Route::get('Home', [HomeController::class, 'Home'])->name('home');
 
+    //Logout
+    Route::get('/Logout', [AuthController::class, 'Logout'])->name('logout');
+
+    //Admin
+    Route::get('TambahUser', [AdminController::class, 'TambahUser'])->name('tambahuser');
+    Route::get('DaftarUser', [AdminController::class, 'DaftarUser'])->name('daftaruser');
 });
