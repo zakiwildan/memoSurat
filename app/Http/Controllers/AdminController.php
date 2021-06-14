@@ -9,7 +9,15 @@ use PhpParser\Node\Expr\FuncCall;
 class AdminController extends Controller
 {
     public function TambahUser(){
-        return view('admin.tambahuser');
+        $divisi = DB::table('d_divisi')
+                ->where('status', 1)
+                ->get();
+
+        $jabatan = DB::table('d_jabatan')
+                ->where('status', 1)
+                ->get();           
+
+        return view('admin.tambahuser', ['divisi' => $divisi, 'jabatan' => $jabatan]);
     }
 
     public function DaftarUser(){
