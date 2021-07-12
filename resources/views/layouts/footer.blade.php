@@ -29,10 +29,6 @@
 <script src="{{ url('AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ url('AdminLTE/dist/js/adminlte.js') }}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ url('AdminLTE/dist/js/pages/dashboard.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ url('AdminLTE/dist/js/demo.js') }}"></script>
 <!-- DataTables -->
 <script src="{{ url('AdminLTE/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ url('AdminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
@@ -64,6 +60,8 @@
         $('.select2bs4').select2({
             theme: 'bootstrap4'
         })
+
+        $('.textarea').summernote()
 
     });
 

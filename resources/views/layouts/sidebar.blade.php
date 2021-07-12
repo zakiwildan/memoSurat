@@ -37,7 +37,7 @@
                     </a>
                 </li>
 
-                @if (auth()->user()->level == 'Karyawan' || auth()->user()->level == 'Admin')
+                @if (auth()->user()->level == 'karyawan' || auth()->user()->level == 'admin')
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
@@ -48,25 +48,25 @@
                         </a>
 
                         <ul class="nav nav-treeview">
-                            @if (auth()->user()->level == 'Admin')
+                            @if (auth()->user()->level == 'admin')
                                 <li class="nav-item">
-                                    <a href="/DataPegawai" class="nav-link">
+                                    <a href="/BuatMemo" class="nav-link">
                                         <i class="fas fa-paper-plane nav-icon"></i>
                                         <p>Buat Memo</p>
                                     </a>
                                 </li>
                             @endif
 
-                            @if (auth()->user()->level == 'Admin')
+                            @if (auth()->user()->level == 'admin')
                                 <li class="nav-item">
                                     <a href="/DaftarBerkas/{{ auth()->user()->nip }}" class="nav-link">
                                         <i class="fas fa-inbox nav-icon"></i>
-                                        <p>Disposisi Masuk</p>
+                                        <p>Surat Masuk</p>
                                     </a>
                                 </li>
                             @endif
 
-                            @if (auth()->user()->level == 'Admin')
+                            @if (auth()->user()->level == 'admin')
                                 <li class="nav-item">
                                     <a href="/ExportData" class="nav-link">
                                         <i class="fas fa-envelope-open nav-icon"></i>
@@ -88,7 +88,7 @@
                     </a>
                 </li>
 
-                @if (auth()->user()->level == 'Admin')
+                @if (auth()->user()->level == 'admin')
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-users-cog"></i>
@@ -116,7 +116,7 @@
                     </li>
                 @endif
 
-                @if (auth()->user()->level == 'Admin')
+                @if (auth()->user()->level == 'admin')
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-cog"></i>
