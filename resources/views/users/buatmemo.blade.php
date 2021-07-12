@@ -40,23 +40,51 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-6">
-                                        <label for="inputNIP">NIP Pegawai<sup style="color: red">*</sup></label>
+                                        <label for="inputNIP">Nomor Surat<sup style="color: red">*</sup></label>
                                         <input type="text" name="nip" class="form-control" id="inputNIP"
-                                            placeholder="Masukkan NIP Pegawai">
+                                            placeholder="Masukkan Nomor Surat">
                                     </div>
                                     <div class="col-6">
-                                        <label for="inputNama">Nama Pegawai<sup style="color: red">*</sup></label>
+                                        <label for="inputNama">Lampiran<sup style="color: red">*</sup></label>
                                         <input type="text" name="nm_pegawai" class="form-control" id="inputNama"
-                                            placeholder="Masukkan Nama Pegawai">
+                                            placeholder="Masukkan Lampiran">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="row">
+
+                                    <div class="col-6">
+                                        <label for="inputNIP">Perihal<sup style="color: red">*</sup></label>
+                                        <input type="text" name="nip" class="form-control" id="inputNIP"
+                                            placeholder="Masukkan Perihal Memo">
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label>Tembusan Memo</label>
+                                        <select class="select2bs4" multiple="multiple" data-placeholder="Pilih Tembusan"
+                                            style="width: 100%;">
+                                            <option>Alabama</option>
+                                            <option>Alaska</option>
+                                            <option>California</option>
+                                            <option>Delaware</option>
+                                            <option>Tennessee</option>
+                                            <option>Texas</option>
+                                            <option>Washington</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
                                     <div class="col-12">
+                                        <label for="textarea">Isi Memo<sup style="color: red">*</sup></label>
                                         <textarea class="textarea" placeholder="Place some text here"
-                                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                                    </textarea>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +96,7 @@
                                         <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                                     </div>
                                     <div class="col-2">
-                                        <a href="/DataPegawai" class="btn btn-danger btn-block">Kembali</a>
+                                        <a href="Home" class="btn btn-danger btn-block">Kembali</a>
                                     </div>
                                 </div>
                             </div>

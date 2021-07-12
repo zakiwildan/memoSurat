@@ -5,7 +5,6 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button)
-
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ url('AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -63,11 +62,14 @@
 
         $('.textarea').summernote()
 
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+
     });
 
     //Custom File Input
     $(document).ready(function() {
         bsCustomFileInput.init();
     });
-
 </script>
